@@ -2,6 +2,6 @@
 
 <ul>
 <% @players.each do |player| %>
-    <li><%= "#{player.player_name} - #{player.number}" %></li>
+    <a href="/players/<%= player.id %>" ><li><%= "#{player.player_name} - #{player.number}" %></li></a>
     <% end %>
 </ul>

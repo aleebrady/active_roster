@@ -1,3 +1,7 @@
 <h2><%= @player.player_name %></h2>
-<h4>Preferred Number <%= @player.number %></h4>
+<h4>Position: <%= @player.position %></h2>
+<br>
+<h4>Preferred Number: <%= @player.number %></h4>
+<br>
 
+<a href=<%="/players/#{@player.id}/edit"%>> <button> Edit </button></a>

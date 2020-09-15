@@ -1,0 +1,16 @@
+<h1>Edit Player</h1>
+
+<form method="POST" action="/players/<%=@player.id%>" ><br>
+<input type="hidden" name="_method" value="patch">
+<label><strong>Player Name:</strong></label><br>
+<input type="text" name="player[player_name]" placeholder="Player's Name" value="<%= @player.player_name %>"><br>
+<br>
+<label><strong>Number:</strong></label><br>
+<input type="integer" name="player[number]" placeholder="Preferred Number" value="<%= @player.number %>"><br>
+<br>
+<label><strong>Position:</stromg></label><br>
+<input type="text" name="player[position]" placeholder="Natural Position" value="<%= @player.position %>">
+<br>
+<br>
+<input type="submit" value="Update Player">
+</form>
