@@ -1,0 +1,11 @@
+Team.create(team_name:"Chicago Bears", sport:"Football", league:"NFL", coach:"Mike Ditka")
+Team.create(team_name:"Chicago Blackhawks", sport:"Ice-Hockey", league:"NHL", coach:"Mike Keenan")
+Team.create(team_name:"Chicago Bulls", sport:"Basketball", league:"NBA", coach:"Phil Jackson")
+Team.create(team_name:"Chicago Cubs", sport:"Baseball", league:"MLB", coach:"Don Zimmer")
+Team.create(team_name:"Notre Dame Fighting Irish", sport:"Football", league:"College", coach:"Lou Holtz")
+
+Player.create(player_name:"Michael Jordan", number: 23, team_id:"")
+Player.create(player_name:"Walter Payton", number: 34, team_id:"")
+Player.create(player_name:"Andre Dawson", number: 8, team_id:"")
+Player.create(player_name:"Jeremy Roenick", number: 27, team_id:"")
+Player.create(player_name:"Jerome 'The Bus' Bettis", number: 6, team_id:"")
