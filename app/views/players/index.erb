@@ -1,7 +1,12 @@
-<h1>All Players</h1>
+<h1> <%= @team.team_name %> </h1>
+
+<h3> <%= @team.league %> </h3>
+
 
 <ul>
+<h3><%= @team.username %>'s <%= @team.sport %> Team:</h3>
+<p>Coach/Manager: <%= @team.coach %></p>
 <% @players.each do |player| %>
-    <a href="/players/<%= player.id %>" ><li><%= "#{player.player_name} - #{player.number}" %></li></a>
+    <a href="/players/<%= player.id %>" ><li><%= "#{player.player_name} - #{player.position} - #{player.number}" %></li></a>
     <% end %>
 </ul>

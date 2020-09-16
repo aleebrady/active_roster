@@ -7,3 +7,5 @@ end
 
 run ApplicationController
 use PlayersController
+use SessionController
+use TeamsController

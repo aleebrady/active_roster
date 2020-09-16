@@ -1,0 +1,33 @@
+<h1>Create Account</h1>
+
+<% if @errors %>
+    <% @errors.each do |error| %>
+        <p> * <%= error %> </p>
+        <% end %>
+<% end %>
+
+<form method="POST" action="/teams">
+<label>Username:</label><br>
+<input type="text" name="username" placeholder="Enter username"><br>
+<br>
+<label>Team Name:</label><br>
+<input type:"text" name="team_name" placeholder="Team Name"><br>
+<br>
+<label>Sport:</label><br>
+<input type:"text" name="sport" placeholder="Sport"><br>
+<br>
+<label>League:</label><br>
+<input type:"text" name="league" placeholder="League"><br>
+<br>
+<label>Coach:</label><br>
+<input type:"text" name="coach" placeholder="Coach"><br>
+<br>
+<label>Password:</label><br>
+<input type="password" name="password" placeholder="Enter Password"><br>
+<br>
+<label>Confirm Password:</label><br>
+<input type="password" name="password_confirm" placeholder="Re-Enter Password"><br>
+
+<br>
+<input type="submit" value="Submit">
+</form>

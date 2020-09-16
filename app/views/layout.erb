@@ -15,6 +15,23 @@
   </head>
   <body>
     <div class="wrapper">
+    <nav class="menu">
+    <% if logged_in? %>
+    <ul>
+    <li><a href="/players">All Players</a></li>
+    <li><a href="/players/new">Add New Player</a></li>
+    <br>
+    <form method="POST" action="/logout">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Logout">
+    </form>
+    <% else %>
+    <li><a href="signup"><strong>Sign Up</strong></a></li>
+    <li><a href="login"><strong>Log In</strong></a></li>
+    </ul>
+    <% end %>
+    </nav>
+
 
         <%= yield %>
 
