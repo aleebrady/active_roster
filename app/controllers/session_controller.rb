@@ -5,14 +5,15 @@ class SessionController < ApplicationController
     end
 
     post '/login' do
-        user = Team.find_by(username: params[:username])
         #binding.pry
+        user = Team.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id 
             redirect "/players"
         else
-            #@errors = user.errors.full_messages
-            redirect "/login"
+            @errors = "Invalid Username and/or Password"
+            erb :"/session/login"
+            #redirect "/login"
         end
     end
 

@@ -2,7 +2,7 @@
 
 <% if @errors %>
     <% @errors.each do |error| %>
-        <p> * <%= error %> </p>
+        <p><strong>* <%= error %></strong> </p>
         <% end %>
 <% end %>
 
@@ -29,5 +29,5 @@
 <input type="password" name="password_confirm" placeholder="Re-Enter Password"><br>
 
 <br>
-<input type="submit" value="Submit">
+<input type="submit" value="Create Team">
 </form>
