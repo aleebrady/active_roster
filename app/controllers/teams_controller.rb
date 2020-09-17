@@ -20,5 +20,15 @@ class TeamsController < ApplicationController
         end
     end
 
+    get '/all_teams' do
+        @teams = Team.all 
+        erb :"/teams/show"
+    end
 
+    get '/all_teams/:id' do
+        @team = Team.find(params[:id])
+        
+        erb :"/teams/team"
+    end
+        
 end

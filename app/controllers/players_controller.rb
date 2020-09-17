@@ -46,10 +46,4 @@ class PlayersController < ApplicationController
         redirect "/players"
     end
 
-    private 
-
-    def find_player
-
-    end
-
 end
