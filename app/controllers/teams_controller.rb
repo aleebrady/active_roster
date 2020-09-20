@@ -45,7 +45,7 @@ class TeamsController < ApplicationController
             new_player_ids = params[:team][:free_agent_ids] || [] 
             team.player_ids =  existing_player_ids + new_player_ids
             #if there is params fa fa.ids means there are players checked to add
-            # binding.pry
+            #binding.pry
             # add_player_ids = params[:fa] && params[:fa][:fa_ids]
             # if add_player_ids 
             #     add_player_ids.each do |id|
@@ -63,11 +63,14 @@ class TeamsController < ApplicationController
             #if params[:fa][:fa_ids] && params[:fa][:fa_ids].each do |f|
                 #player = Player.find(f)
                 #team.players << player
-            #end
-            #team.update(params[:team][:team_name][:coach][:team_player_ids].to_sym)
+            end
+            team.update(params[:team])
+            #binding.pry
             redirect '/players' #"/all_teams/#{team.id}"
-        end
     end
+
+   
+
 
         
 end

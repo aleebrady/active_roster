@@ -1,13 +1,23 @@
-<h1>Update Team</h1>
+<h1>Update Roster</h1>
 
+<% if current_user %>
+<% end %>
 <% if logged_in? %>
+
 <h2><%= @team.team_name %></h2>
 
 <form method="POST" action="/all_teams/<%=@team.id%>" >
 <input type="hidden" name="_method" value="patch">
 
-<h3><strong>Uncheck the Box to Release:</strong></h3>
+<label><strong>Update Team Name:</strong></label><br>
+<input type="text" name="team[team_name]" placeholder="New Name" value="<%= @team.team_name %>"><br>
 <br>
+<label><strong>Update Coach:</strong></label><br>
+<input type="text" name="team[coach]" placeholder="New Name" value="<%= @team.coach %>"><br>
+<br>
+
+<h3><strong>Uncheck the Box to Release:</strong></h3>
+
 <ul>
 <% @team.players.each do |player| %>
     <input type="checkbox" name="team[team_player_ids][]" id="<%= player.id%>" value="<%= player.id%>" <%='checked' if @team.players.include?(player) %>>
