@@ -6,7 +6,9 @@
 <ul>
 <h3><%= @team.username %>'s <%= @team.sport %> Team:</h3>
 <p>Coach/Manager: <%= @team.coach %></p>
-<% @players.each do |player| %>
+<% @team.players.each do |player| %>
     <a href="/players/<%= player.id %>" ><li><%= "#{player.player_name} - #{player.position} - #{player.number}" %></li></a>
     <% end %>
 </ul>
+<br>
+<a href="/all_teams/<%=@team.id%>/edit"><strong>Sign Free Agent / Release Player</strong></a>

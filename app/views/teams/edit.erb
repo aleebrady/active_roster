@@ -1,0 +1,33 @@
+<h1>Update Team</h1>
+
+<% if logged_in? %>
+<h2><%= @team.team_name %></h2>
+
+<form method="POST" action="/all_teams/<%=@team.id%>" >
+<input type="hidden" name="_method" value="patch">
+
+<h3><strong>Uncheck the Box to Release:</strong></h3>
+<br>
+<ul>
+<% @team.players.each do |player| %>
+    <input type="checkbox" name="team[team_player_ids][]" id="<%= player.id%>" value="<%= player.id%>" <%='checked' if @team.players.include?(player) %>>
+    <%= player.player_name%><br>
+    </input>
+  <% end %>
+  </ul>
+  <br>
+
+  <h3>Free Agents:</h3>
+
+  <% @players.each do |fa| %>
+    <input type="checkbox" name="team[free_agent_ids][]" id="<%= fa.id%>" value="<%= fa.id%>">
+    <%= fa.player_name%><br>
+    </input>
+    <% end %>
+
+<br>
+<input type="submit" value="Update Team">
+</form>
+<% else %>
+<h2>Log In to Update Your Team</h2>
+<%end%>

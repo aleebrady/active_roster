@@ -5,10 +5,10 @@ class SessionController < ApplicationController
     end
 
     post '/login' do
-        #binding.pry
         user = Team.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id 
+            #binding.pry
             redirect "/players"
         else
             @errors = "Invalid Username and/or Password"

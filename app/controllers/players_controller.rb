@@ -23,7 +23,8 @@ class PlayersController < ApplicationController
         player = current_user.players.create(params[:player])
         #player = Player.create(params[:player])
 
-        redirect "/players/#{player.id}"
+        #redirect "/players/#{player.id}"
+        redirect '/players'
     end
 
     get "/players/:id/edit" do 
