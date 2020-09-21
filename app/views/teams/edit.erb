@@ -21,7 +21,7 @@
 <ul>
 <% @team.players.each do |player| %>
     <input type="checkbox" name="team[team_player_ids][]" id="<%= player.id%>" value="<%= player.id%>" <%='checked' if @team.players.include?(player) %>>
-    <%= player.player_name%><br>
+    <%= player.player_name%> - <%= player.position %> <br>
     </input>
   <% end %>
   </ul>
@@ -31,7 +31,7 @@
 
   <% @players.each do |fa| %>
     <input type="checkbox" name="team[free_agent_ids][]" id="<%= fa.id%>" value="<%= fa.id%>">
-    <%= fa.player_name%><br>
+    <%= fa.player_name%> - <%= fa.position %><br>
     </input>
     <% end %>
 
