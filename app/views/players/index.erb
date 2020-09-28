@@ -1,3 +1,5 @@
+<% if logged_in? %>
+
 <h1> <%= @team.team_name %> </h1>
 
 <h3> <%= @team.league %> </h3>
@@ -12,3 +14,8 @@
 </ul>
 <br>
 <a href="/all_teams/<%=@team.id%>/edit"><strong>Sign Free Agent / Release Player / Edit Team Info</strong></a>
+
+<% else %>
+<h2>Log In to see your Roster</h2>
+<%end%>
+

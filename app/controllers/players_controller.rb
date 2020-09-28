@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
     get '/players' do
-        @players = current_user.players
+        @players = current_user
         erb :"/players/index"
     end
 
@@ -28,13 +28,14 @@ class PlayersController < ApplicationController
     end
 
     get "/players/:id/edit" do 
+        #binding.pry
         @player = Player.find_by(id:params[:id])
         erb :"players/edit"
     end
 
     patch '/players/:id' do
         player = Player.find_by(id:params[:id])
-        # if player.user_id == session[:user_id]
+        #if player.user_id == session[:user_id]
         if current_user.id = player.team_id
             player.update(params[:player])
             redirect "/players/#{player.id}"

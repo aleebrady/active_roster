@@ -22,13 +22,13 @@ class TeamsController < ApplicationController
 
     get '/all_teams' do
         @teams = Team.all 
-        erb :"/teams/show"
+        erb :"/teams/index"
     end
 
     get '/all_teams/:id' do
         @team = Team.find(params[:id])
         
-        erb :"/teams/team"
+        erb :"/teams/show"
     end
 
     get '/all_teams/:id/edit' do

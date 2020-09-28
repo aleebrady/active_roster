@@ -1,3 +1,7 @@
+<h1>Update player</h1>
+
+<% if current_user.id == @player.team_id %>
+
 <h2><%= @player.player_name %></h2>
 <h4>Position: <%= @player.position %></h2>
 <br>
@@ -9,3 +13,6 @@
 <input type="hidden" name="_method" value="delete">
 <input type="submit" value="Retire Player">
 </form>
+<% else %>
+<h2>The player you are trying to access is not on your team</h2>
+<% end %>

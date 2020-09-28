@@ -1,3 +1,8 @@
+<% if %>
+<% logged_in? %>
+<% if %>
+<% current_user.id ==  @player.team_id %>
+
 <h1>Edit Player</h1>
 
 <form method="POST" action="/players/<%=@player.id%>" ><br>
@@ -14,3 +19,13 @@
 <br>
 <input type="submit" value="Update Player">
 </form>
+<% else %>
+<h3>This player is not on your Team</h3>
+<% end %> 
+<% else %> 
+<h3>Login to Edit Your Player</h3>
+<% end %> 
+
+
+
+
